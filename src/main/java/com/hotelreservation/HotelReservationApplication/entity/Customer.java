@@ -1,16 +1,17 @@
 package com.hotelreservation.HotelReservationApplication.entity;
 
-
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
-@Table(name = "Customer")
+@Table(name="customer")
 public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private int id;
+    @Column(name = "customer_id")
+    private int customerId;
 
     @Column(name = "first_name")
     private String firstName;
@@ -21,21 +22,62 @@ public class Customer {
     @Column(name = "email")
     private String email;
 
-    public Customer(){ }
+    @Column(name = "password")
+    private String password;
 
-    public Customer(int id, String firstName, String lastName, String email) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
+    @Column(name = "location")
+    private String location;
+
+    @Column(name = "phone_number")
+    private int phoneNumber;
+
+    @Column(name = "photo")
+    private String photo;
+
+    @Column(name = "role")
+    public String role;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "customer")
+    private List<Reservation> resevationBookings;
+
+    public String getLocation() {
+        return location;
     }
 
-    public int getId() {
-        return id;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(int phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public int getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
     }
 
     public String getFirstName() {
@@ -62,15 +104,11 @@ public class Customer {
         this.email = email;
     }
 
-    @Override
-    public String toString() {
-        return "Customer{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+    public String getPassword() {
+        return password;
     }
 
-
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }
