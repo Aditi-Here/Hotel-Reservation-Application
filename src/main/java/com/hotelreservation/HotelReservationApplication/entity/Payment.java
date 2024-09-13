@@ -8,8 +8,8 @@ public class Payment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private String id;
+    @Column(name = "payment_id")
+    private String paymentId;
 
     @Column(name = "first_name")
     private String firstName;
@@ -21,17 +21,56 @@ public class Payment {
     private String email;
 
     @Column(name = "card_number")
-    private int cardNumber;
+    private String cardNumber;
 
     @Column(name = "user_id")
     private int userId;
 
-    public Payment(String id, String firstName, String lastName, String email, int cardNumber, int userId) {
-        this.id = id;
+    public String getPaymentId() {
+        return paymentId;
+    }
+
+    public void setPaymentId(String paymentId) {
+        this.paymentId = paymentId;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
         this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getCardNumber() {
+        return cardNumber;
+    }
+
+    public void setCardNumber(String cardNumber) {
         this.cardNumber = cardNumber;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
         this.userId = userId;
     }
 }

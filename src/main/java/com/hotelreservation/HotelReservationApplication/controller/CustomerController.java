@@ -5,6 +5,7 @@ import com.hotelreservation.HotelReservationApplication.entity.Customer;
 //import com.hotelreservation.HotelReservationApplication.entity.Customer1;
 //import com.hotelreservation.HotelReservationApplication.service.CustomerService_dao;
 import com.hotelreservation.HotelReservationApplication.service.CustomerService;
+//import com.hotelreservation.types.Customer;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -39,6 +40,7 @@ public class CustomerController {
     //method
     @GetMapping("/{customerId}")
     public Customer getCustomer(@PathVariable int customerId){
+
         return customerService.getCustomerById(customerId);
     }
     @GetMapping

@@ -29,7 +29,7 @@ public class Customer {
     private String location;
 
     @Column(name = "phone_number")
-    private int phoneNumber;
+    private String phoneNumber;
 
     @Column(name = "photo")
     private String photo;
@@ -48,11 +48,11 @@ public class Customer {
         this.location = location;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 

@@ -13,9 +13,6 @@ public class Reservation {
     @Column(name = "property_id")
     private int propertyId;
 
-//    @Column(name = "location")
-//    private String location;
-
     @Column(name = "check_in")
     private String checkIn;
 
@@ -30,7 +27,6 @@ public class Reservation {
 
     @Column(name = "payment_id")
     private int paymentId;
-
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "customer_id",nullable = false)
