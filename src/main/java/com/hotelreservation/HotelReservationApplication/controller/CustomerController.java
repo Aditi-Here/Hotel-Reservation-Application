@@ -54,8 +54,8 @@ public class CustomerController {
         return customerService.saveCustomer(user);
     }
 
-    @PostMapping("/userValidation")
-    public boolean checkValidUser(@RequestBody Customer user){
+    @PostMapping("/saveCustomer")
+    public boolean saveCustomer(@RequestBody Customer user){
         return customerService.validateCustomer(user);
     }
 

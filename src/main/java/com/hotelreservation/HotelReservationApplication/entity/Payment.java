@@ -9,7 +9,7 @@ public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "payment_id")
-    private String paymentId;
+    private int paymentId;
 
     @Column(name = "first_name")
     private String firstName;
@@ -26,11 +26,11 @@ public class Payment {
     @Column(name = "user_id")
     private int userId;
 
-    public String getPaymentId() {
+    public int getPaymentId() {
         return paymentId;
     }
 
-    public void setPaymentId(String paymentId) {
+    public void setPaymentId(int paymentId) {
         this.paymentId = paymentId;
     }
 
