@@ -20,12 +20,12 @@ public class PaymentController {
     }
     //post
     @PostMapping
-    public Payment addPayment(@RequestBody Payment payment){
+    public Payment savePayment(@RequestBody Payment payment){
         return paymentService.savePayment(payment);
     }
     //put
     @PutMapping("/{paymentId}")
-    public Payment updatePaymentDetails(@PathVariable int paymentId, @RequestBody Payment payment) throws Exception {
+    public Payment updatePayment(@PathVariable int paymentId, @RequestBody Payment payment) throws Exception {
         if(paymentId == payment.getPaymentId()){
             return paymentService.validatePayment(payment);
         }

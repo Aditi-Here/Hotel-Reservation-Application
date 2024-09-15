@@ -1,9 +1,5 @@
 package com.hotelreservation.HotelReservationApplication.controller;
-
-
 import com.hotelreservation.HotelReservationApplication.entity.Customer;
-//import com.hotelreservation.HotelReservationApplication.entity.Customer1;
-//import com.hotelreservation.HotelReservationApplication.service.CustomerService_dao;
 import com.hotelreservation.HotelReservationApplication.service.CustomerService;
 //import com.hotelreservation.types.Customer;
 import org.springframework.web.bind.annotation.*;
@@ -13,21 +9,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/customers")
 public class CustomerController {
-
-//    // create fields
-//   private CustomerService_dao myCustomerService;
-//
-//    //constructor injection
-//    public CustomerController(CustomerService_dao theCustomerService){
-//        myCustomerService = theCustomerService;
-//    }
-//
-//    //method
-//    @GetMapping("/{customerId}")
-//    public Customer getCustomer(@PathVariable int customerId){
-//
-//        return myCustomerService.getCustomerById(customerId);
-//    }
 
     // create fields
     private CustomerService customerService;
@@ -50,19 +31,19 @@ public class CustomerController {
     }
 
     @PostMapping
-    public Customer addCustomer(@RequestBody Customer user){
+    public Customer saveCustomer(@RequestBody Customer user){
         return customerService.saveCustomer(user);
     }
 
     @PostMapping("/saveCustomer")
-    public boolean saveCustomer(@RequestBody Customer user){
+    public boolean ValidateCustomerCredientials(@RequestBody Customer user){
         return customerService.validateCustomer(user);
     }
 
     @PutMapping("/{id}")
-    public Customer updateCustomerDetails(@PathVariable int id, @RequestBody Customer user) throws Exception {
+    public Customer updateCustomer(@PathVariable int id, @RequestBody Customer user) throws Exception {
         if(id == user.getCustomerId())
-            return customerService.updateCustomerDetails(user);
+            return customerService.updateCustomer(user);
         else {
              throw new Exception("ids do not match.");
         }

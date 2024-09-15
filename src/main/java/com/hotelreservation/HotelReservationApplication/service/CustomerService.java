@@ -38,7 +38,7 @@ public class CustomerService {
         return false;
     }
 
-    public Customer updateCustomerDetails(Customer user){
+    public Customer updateCustomer(Customer user){
         Customer dataBaseUser = customerRepository.findByEmail(user.getEmail());
         System.out.println(user.getEmail());
         dataBaseUser.setPassword(user.getPassword());
