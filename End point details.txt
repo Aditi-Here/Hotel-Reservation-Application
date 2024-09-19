@@ -1,0 +1,9 @@
+1. Customer
+save customer 
+update customer
+verify email id and user name
+2. Reservation
+save
+cancel
+get reservations by user id
+get reservation by reservation id
