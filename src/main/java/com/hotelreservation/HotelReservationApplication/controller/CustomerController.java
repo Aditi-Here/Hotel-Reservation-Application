@@ -31,11 +31,11 @@ public class CustomerController {
     }
 
     @PostMapping
-    public Customer saveCustomer(@RequestBody Customer user){
+    public Customer createCustomer(@RequestBody Customer user){
         return customerService.saveCustomer(user);
     }
 
-    @PostMapping("/saveCustomer")
+    @PostMapping("/signIn")
     public boolean ValidateCustomerCredientials(@RequestBody Customer user){
         return customerService.validateCustomer(user);
     }

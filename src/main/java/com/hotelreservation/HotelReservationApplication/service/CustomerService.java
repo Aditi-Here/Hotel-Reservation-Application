@@ -39,8 +39,8 @@ public class CustomerService {
     }
 
     public Customer updateCustomer(Customer user){
-        Customer dataBaseUser = customerRepository.findByEmail(user.getEmail());
-        System.out.println(user.getEmail());
+        Customer dataBaseUser = customerRepository.findById(user.getCustomerId()).get();
+
         dataBaseUser.setPassword(user.getPassword());
         dataBaseUser.setFirstName(user.getFirstName());
         dataBaseUser.setLastName(user.getLastName());
