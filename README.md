@@ -73,13 +73,10 @@ Refer to the `End point details.txt` file for a comprehensive list of available 
 
 ## Contributing
 
-Contributions are welcome! Please fork the repository and submit a pull request for any enhancements or bug fixes.([Reddit][4])
+Contributions are welcome! Please fork the repository and submit a pull request for any enhancements or bug fixes.
 
 ## License
 
 This project is open-source and available under the [MIT License](LICENSE).
 
-## Contributions
-
-Contributions are welcome! Feel free to fork this repository and submit a pull request with your improvements.
 
